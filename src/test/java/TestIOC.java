@@ -36,11 +36,11 @@ public class TestIOC{
 
     @Test
     public void testOrderFood() {
-        // Quiz
-        // how to test the logic in FoodOrderingService without relying on SlickDatabase and Disk
+        // How to test the logic in FoodOrderingService without relying on SlickDatabase and Disk?
         FoodOrderingService fd = new FoodOrderingService();
-        fd.order("Peng", "fish biscuit");
-        fd.order("Peng", "steak hamburger");
-        fd.checkStatus("Peng");
+        fd.order("Amy", "fish biscuit");
+        fd.order("Amy", "steak hamburger");
+        fd.checkStatus("Amy");
+        fd.checkStatus("Sam");
     }
 }
