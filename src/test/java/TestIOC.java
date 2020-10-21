@@ -1,10 +1,11 @@
+import FoodOrderingService.FoodOrderingService;
+import Programmer.Programmer;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class TestIOC{
 
@@ -14,7 +15,7 @@ public class TestIOC{
         PrintStream ps = new PrintStream(baos);
 
         HelloWorldPrint.printHelloWorld(ps);
-        assertEquals("Hello World", baos.toString());
+        assertEquals("Hello World\n", baos.toString());
     }
 
     @Test
@@ -22,5 +23,13 @@ public class TestIOC{
         Programmer sam = new Programmer("sam");
         sam.playGame();
         sam.writeCode();
+    }
+
+    @Test
+    public void testOrderFood() {
+        FoodOrderingService fd = new FoodOrderingService();
+        fd.order("Peng", "fish biscuit");
+        fd.order("Peng", "steak hamburger");
+        fd.checkStatus("Peng");
     }
 }
