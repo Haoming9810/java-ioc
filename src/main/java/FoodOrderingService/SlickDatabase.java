@@ -1,7 +1,7 @@
 package FoodOrderingService;
 
 public class SlickDatabase {
-    Disk disk = new Disk();
+    private Disk disk = new Disk();
 
     public void write(String key, String value) {
         if (value == null) {
